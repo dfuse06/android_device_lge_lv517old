@@ -117,10 +117,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     charger_res_images
 
-# Doze mode
-PRODUCT_PACKAGES += \
-    LgeDoze
-
 # For android_filesystem_config.h
 PRODUCT_PACKAGES += \
     fs_config_files
@@ -227,7 +223,9 @@ PRODUCT_PACKAGES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    libshim_camera
+    libshim_camera \
+    Snap
+    
 
 # Sensors
 PRODUCT_PACKAGES += \
