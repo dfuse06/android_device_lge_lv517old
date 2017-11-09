@@ -14,10 +14,7 @@
 # limitations under the License.
 #
 
-# Assert
-#TARGET_OTA_ASSERT_DEVICE := Aquaris_U_Plus,ph2n
-
-LOCAL_PATH := device/lge/ph2n
+LOCAL_PATH := device/lge/lv517
 
 TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
 
@@ -33,8 +30,11 @@ TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_VARIANT := cortex-a53
 
 # Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := msm8937
+TARGET_BOOTLOADER_BOARD_NAME := msm8937_32
 TARGET_NO_BOOTLOADER := true
+
+#add suffix variable to uniquely identify the board
+TARGET_BOARD_SUFFIX := _32
 
 # Kernel
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 user_debug=30 msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 androidboot.hardware=qcom
@@ -47,8 +47,8 @@ TARGET_KERNEL_ARCH := arm
 TARGET_KERNEL_APPEND_DTB := true
 KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/arm/arm-eabi-4.8/bin
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-eabi-
-TARGET_KERNEL_CONFIG := lineage_ph2n_mini_defconfig
-TARGET_KERNEL_SOURCE := kernel/lge/msm8937
+TARGET_KERNEL_CONFIG := fusebox_defconfig
+TARGET_KERNEL_SOURCE := kernel/lge/lv517
 
 # Audio
 AUDIO_FEATURE_ENABLED_AAC_ADTS_OFFLOAD := true
@@ -123,7 +123,7 @@ BOARD_CHARGING_CMDLINE_VALUE := "chargerlogo"
 
 # CMHW
 BOARD_USES_CYANOGEN_HARDWARE := true
-#BOARD_HARDWARE_CLASS := device/lge/ph2n/cmhw/
+
 
 # CNE
 BOARD_USES_QCNE := true
@@ -211,10 +211,6 @@ BOARD_SEPOLICY_DIRS += $(LOCAL_PATH)/sepolicy
 # Tap to wake
 #TARGET_TAP_TO_WAKE_NODE := "/sys/devices/virtual/input/lge_touch/lpwg_notify"
 
-# NFC
-BOARD_NFC_CHIPSET := pn548
-BOARD_NFC_DEVICE := "/dev/pn547"
-
 # Wifi
 BOARD_HAS_QCOM_WLAN := true
 BOARD_HAS_QCOM_WLAN_SDK := true
@@ -233,5 +229,5 @@ WIFI_DRIVER_MODULE_PATH     := "/system/lib/modules/wlan.ko"
 WIFI_DRIVER_MODULE_NAME     := "wlan"
 
 # inherit from the proprietary version
--include vendor/lge/ph2n/BoardConfigVendor.mk
+-include vendor/lge/lv517/BoardConfigVendor.mk
 -include device/lge/common/BoardConfigCommon.mk

@@ -25,7 +25,7 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifneq ($(filter ph2n,$(TARGET_DEVICE)),)
+ifneq ($(filter lv517,$(TARGET_DEVICE)),)
 include $(call all-makefiles-under,$(LOCAL_PATH))
 
 include $(CLEAR_VARS)
@@ -259,4 +259,4 @@ ALL_DEFAULT_INSTALLED_MODULES += $(WV_SYMLINKS)
 
 endif
 
-include device/lge/ph2n/tftp.mk
+include device/lge/lv517/tftp.mk
